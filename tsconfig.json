@@ -23,12 +23,6 @@
         "name": "next"
       }
     ],
-    "baseUrl": ".",
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    }
   },
   "include": [
     "next-env.d.ts",
@@ -36,7 +30,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/app/todo/example",
-    "src/providers.jsx"
+    "src/providers.jsx",
+    "vitest.config.ts"
   ],
   "exclude": [
     "node_modules"

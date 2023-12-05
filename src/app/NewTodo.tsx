@@ -5,8 +5,8 @@ import * as Yup from 'yup';
 
 import { Input, Button, Text, Flex } from '@chakra-ui/react';
 
-import { useAppDispatch } from '@/state/hooks';
-import { add } from '@/features/todo';
+import { useAppDispatch } from '../state/hooks';
+import { add } from '../features/todo';
 
 const NewTodo = () => {
 

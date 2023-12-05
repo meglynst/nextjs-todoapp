@@ -3,8 +3,8 @@
 import TodoItem from './TodoItem';
 import { Button } from '@chakra-ui/react';
 
-import { useAppDispatch, useAppSelector } from '@/state/hooks';
-import { removeAll } from '@/features/todo';
+import { useAppDispatch, useAppSelector } from '../state/hooks';
+import { removeAll } from '../features/todo';
 
 const TodoList = () => {
 

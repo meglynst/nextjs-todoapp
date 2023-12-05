@@ -1,14 +1,14 @@
-# Todo App with Next.js 13
+# A basic TODO app
 
-## Introduction
-
-A basic Todo App created in Next.js 13. You can view the demo [here](https://next13-todoapp.vercel.app/).
-
-## Setup
+Run:
 
 ```bash
-# 1. Clone repo & Install deps
-git clone https://github.com/saadfrhan/nextjs-todoapp && cd nextjs-todoapp && npm i
-# 2. Run dev server
+npm install
 npm run dev
 ```
+
+Then visit http://localhost:3000.
+
+## Credits
+
+This 

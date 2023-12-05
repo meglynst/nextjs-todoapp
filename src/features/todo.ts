@@ -1,4 +1,4 @@
-import { TodoI } from '@/types';
+import { TodoI } from '../types';
 import {
   createSlice,
   PayloadAction

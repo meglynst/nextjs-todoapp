@@ -2,8 +2,7 @@
 
 import { FC } from 'react'
 
-import { Checkbox, Button, Flex, Text, IconButton } from '@chakra-ui/react'
-import { DeleteIcon } from '@chakra-ui/icons'
+import { Checkbox, Button, Flex, Text } from '@chakra-ui/react'
 
 import { remove, update } from '../features/todo'
 import { useAppDispatch } from '../state/hooks'
@@ -28,8 +27,14 @@ const TodoItem: FC<{
   }
 
   return (
-    <Flex justifyContent="space-between" gap={4} padding={1} marginTop={2}>
-      <Checkbox onChange={updateTodo} checked={todo.isDone} gap={2}>
+    <Flex
+      justifyContent="space-between"
+      gap={4}
+      padding={1}
+      marginTop={2}
+      data-testid="todo-item"
+    >
+      <Checkbox onChange={() => updateTodo()} checked={todo.isDone} gap={2}>
         <Text
           noOfLines={1}
           maxWidth={380}
@@ -43,7 +48,7 @@ const TodoItem: FC<{
           {todo.title}
         </Text>
       </Checkbox>
-      <IconButton
+      <Button
         colorScheme="red"
         aria-label="Delete"
         onClick={() =>
@@ -53,8 +58,9 @@ const TodoItem: FC<{
             })
           )
         }
-        icon={<DeleteIcon />}
-      />
+      >
+        Delete
+      </Button>
     </Flex>
   )
 }

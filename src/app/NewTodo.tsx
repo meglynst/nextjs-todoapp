@@ -1,28 +1,28 @@
-"use client";
+'use client'
 
-import { Formik, Form } from 'formik';
-import * as Yup from 'yup';
+import { Formik, Form } from 'formik'
+import * as Yup from 'yup'
 
-import { Input, Button, Text, Flex } from '@chakra-ui/react';
+import { Input, Button, Text, Flex } from '@chakra-ui/react'
 
-import { useAppDispatch } from '../state/hooks';
-import { add } from '../features/todo';
+import { useAppDispatch } from '../state/hooks'
+import { add } from '../features/todo'
 
 const NewTodo = () => {
-
-  const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch()
 
   return (
     <Formik
-      initialValues={{ title: "" }}
+      initialValues={{ title: '' }}
       onSubmit={(values) => {
-        dispatch(add({
-          title: values.title,
-        }));
+        dispatch(
+          add({
+            title: values.title,
+          })
+        )
       }}
       validationSchema={Yup.object().shape({
-        title: Yup.string()
-          .required()
+        title: Yup.string().required(),
       })}
     >
       {({
@@ -33,9 +33,9 @@ const NewTodo = () => {
         handleBlur,
         handleReset,
         errors,
-        touched
+        touched,
       }) => (
-        <Form>
+        <Form data-testid="new-todo">
           <Input
             name="title"
             id="title"
@@ -50,7 +50,9 @@ const NewTodo = () => {
           />
 
           {errors.title && touched.title && (
-            <Text color="red" fontSize={14} marginBottom={3}>This field is required</Text>
+            <Text color="red" fontSize={14} marginBottom={3}>
+              This field is required
+            </Text>
           )}
 
           <Flex gap={3}>
@@ -66,7 +68,6 @@ const NewTodo = () => {
               Submit
             </Button>
           </Flex>
-
         </Form>
       )}
     </Formik>
